@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <!-- 반응형의 경우 꼭 필요한 태그/ scale 초기 화면크기 비율 1-->
+    <!-- viewport 정보는 반응형에서 꼭 필요하다. -->
+    <title>규르-규르잼</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/customFont.css" rel="stylesheet">
+  </head>
+ <style>
+        body { margin-top: -16px; padding-top: 20px; font-size: 20px;  }
+        
+      
+</style>
+  <body>
+	<div class="container top">
+		<!--부트스트렙에서 항상 container가 기준이고 <div container>가 있기때문에 화면을 꽉 채우지 않고 좌우공백을 가지고 가운데 정렬한다.  -->
+		<div id="loginBar" style="float: right" class="login-form visible-lg visible-md visible-sm loginBar">
+				<input style="width:90px; font-size: 12px;" type="text" class="form-control" name="id" placeholder="아이디">
+			 	<input style="width:90px; font-size: 12px;" type="password" class="form-control" name="pwd" placeholder="비밀번호">
+			 	<input style="margin-left: 7px; position: relative; top: 3px;" type="checkbox" name="checkbox"><span style="margin-left: 4px; font-size: 12px; margin-right: 4px; display:inline-block">유지</span>
+				<button onclick = "login()" type="submit" class="btn btn-default"><b style="bottom: 1px; position: relative; font-size: 10px;" >로그인</b></button>
+				<span>
+					<a href="main/join.html" style="color:black; font-size: 12px; margin-left: 8px; cursor: pointer">회원가입</a>
+					<a href="main/findAccount.html"style="color:black; font-size: 12px; margin-left: 5px; cursor: pointer">ID/PW찾기</a>
+				</span>
+		</div>
+
+		<div class="visible-lg visible-md visible-sm">
+		<!-- 로고 이미지 -->
+			<a href="main/index.html"><img style="margin-bottom: -30px;" src="img/honey.png"></a>
+		<!-- 로고 옆 검색창 -->
+			<div class="input-group">
+				<input style="width: 150px; border: 3px solid #A1A1A1; height: 24px; line-height: 20px; position: absolute;" type="text" class="form-control">
+				<span class="input-group-btn">
+					<button style="margin-left: 2px; height: 24px; border-radius: 4px; width: 44px;" class="btn btn-default"><b style="position: relative; font-size: 12px;">검색</b></button>
+				</span>
+			</div>
+		</div>
+		<nav class="navbar navbar-default">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div style="background-color:#c24938" class="navbar-header">
+				<!-- "navbar-header" 모바일때 표시되는 메뉴 버튼(PC 버젼에서는 보이지 않는다.) -->
+				<button style="background-color:#c24938" type="button" class="navbar-toggle toggle-right" data-toggle="modal" data-target="#modal_aside_right">
+					<!--  <span class="sr-only">Toggle navigation</span> 시각장애인분들을 위한 태그 -->
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<button style="padding: 4px 8px 0 8px; font-size: 16px; margin-top: 11px; margin-right: -2px; color: white; background-color:#c24938" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+	      			 <span class="glyphicon glyphicon-search"></span>
+	      		</button>
+				<a style="color:white; font-size: 16px;font-weight: bold" class="navbar-brand visible-xs" href="main/index.html">규르</a>
+			</div>
+			<div style="padding: 0; background-color: white;"class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul style="padding: 0; margin: 0;"class="nav navbar-nav">
+				<input style="padding-left:10px; height: 40px; width: 100%; display:inline-block" type="text" class="form-control visible-xs" placeholder="사이트 통합검색">
+				 <button style="display:inline-block; margin:0; margin-top: -40px; background-color: #c24938;" type="button" class="navbar-toggle visible-xs" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				 	<span style="color: white;" class="glyphicon glyphicon-remove visible-xs"></span>
+				 </button>
+				</ul>
+			</div>
+			
+
+	<div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a style="font-size: 15px; color:white; text-shadow: 0px 1px 0px black; padding-left: 40px; padding-right: 40px; margin-left: -15px; border-radius: 3px 0 0 3px; border-right: 1px solid #a0a0a0;"
+               href="#" class="dropdown-toggle" data-toggle="dropdown">이것저것</a>
+            <ul class="dropdown-menu">
+              <li style=" text-align: center;
+					      font-size: 13px;
+					      background-color: #E2E2E2;
+			          	  color: black;
+					      margin-left: 10px;
+    					  margin-right: 10px;
+    					  padding-top: 2px;
+    					  padding-bottom: 2px; "
+    			  class="dropdown-header">이것저것</li>
+              <li><a style="font-size: 11px; font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">유머/이슈</a></li>
+              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">방송/연예</a></li>
+              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">핫딜/무료</a></li>
+              <li style=" text-align: center;
+					      font-size: 13px;
+					      background-color: #E2E2E2;
+					      color: black;
+					      margin-left: 10px;
+    					  margin-right: 10px;
+    					  padding-top: 2px;
+    					  padding-bottom: 2px;"
+  					class="dropdown-header">인기</li>
+              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">인기글</a></li>
+              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">베스트 인기글</a></li>
+            </ul>
+          </li>
+         <li class="dropdown">
+            <a style="font-size: 15px; color:white; text-shadow: 0px 1px 0px black; padding-left: 41px; padding-right: 41px; border-radius: 3px 0 0 3px; border-right: 1px solid #a0a0a0;"
+               href="#" class="dropdown-toggle" data-toggle="dropdown">커뮤니티</a>
+            <ul style="height: 163px; border-radius: 0!important;" class="dropdown-menu">
+              <li style=" text-align: center;
+					      font-size: 13px;
+					      background-color: #E2E2E2;
+			          	  color: black;
+					      margin-left: 10px;
+    					  margin-right: 10px;
+    					  padding-top: 2px;
+    					  padding-bottom: 2px; "
+    			  class="dropdown-header">게임</li>
+              <li><a style="font-size: 11px; font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">유머/이슈</a></li>
+              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">PC게임</a></li>
+              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">콘솔게임</a></li>
+              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">모바일 게임</a></li>
+              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">플래시 게임</a></li>
+            </ul>
+            <ul style="position: absolute; left: 158px; padding-bottom: 8px; box-shadow:none!important; border-radius: 0!important;" class="dropdown-menu">
+	              <li style=" text-align: center;
+						      font-size: 13px;
+						      background-color: #E2E2E2;
+						      color: black;
+						      margin-left: 10px;
+	    					  margin-right: 10px;
+	    					  padding-top: 2px;
+	    					  padding-bottom: 2px;"
+	  					class="dropdown-header">스포츠</li>
+	              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">국내축구</a></li>
+	              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">해외축구</a></li>
+	              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">국내야구</a></li>
+	              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">해외야구</a></li>
+	              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">농구</a></li>
+	              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">배구</a></li>
+            </ul>
+            <ul style="position: absolute; left: 316px; height: 163px; box-shadow:none!important; border-radius: 0!important;" class="dropdown-menu">
+	              <li style=" text-align: center;
+						      font-size: 13px;
+						      background-color: #E2E2E2;
+						      color: black;
+						      margin-left: 10px;
+	    					  margin-right: 10px;
+	    					  padding-top: 2px;
+	    					  padding-bottom: 2px;"
+	  					class="dropdown-header">게시판</li>
+	              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">쑥덕쑥덕</a></li>
+	              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">만화</a></li>
+	              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">음악감상</a></li>
+	              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">정치/사회</a></li>
+            </ul>
+          </li>
+         </ul>      
+         </div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+		</nav>
+		 <div style="margin:-13px -1px 13px -1px"id="carousel-example-generic" class="carousel slide imageBar2">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+                 <!-- Carousel items -->
+             <div class="carousel-inner" style="height: 267px!important;">
+                <div class="item active">
+                   <img src="img/2.jpg" alt="First slide">
+                </div>
+                <div class="item">
+                   <img src="img/1.jpg" alt="Second slide">               
+                </div>
+                <div class="item">
+                   <img src="img/3.jpg" alt="Third slide">                 
+                </div>
+             </div>
+            <!-- Controls -->
+              <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="icon-prev"></span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="icon-next"></span>
+              </a>
+          </div>
+          <div class="tl_srch clear">
+	<div class="bd_tl">
+		<span class="ngeb clear">
+			<span style="margin-left: 5px; background-color: #d46a10; margin-right:3px; border-radius: 2px; color: #d46a10;">..</span>
+			<a style="color:black; font-size: 15px; text-decoration: none;" href="main/index.html"><b>이것저것 최신글</b></a></span>
+		<span style="display: block; font-size: 12px; margin-top: 5px" class="sub_title clear">유머/이슈, 방송/연예, 핫딜/무료 글을 모아주는 게시판 입니다. 글쓰기 및 검색은 각 게시판에서 가능합니다.</span></div>		
+	<div style="margin-top: 20px;" class="panel panel-default">
+      <div style="font-size: 12px; height: 35px;" class="panel-heading visible-lg visible-md visible-sm">
+      	꾸르 
+      	<span style="font-size: 12px; color: gray;margin-left: 3px; margin-right: 3px" class="glyphicon glyphicon-chevron-right"></span> 
+      	이것저것 최신글 </div>
+       <table class="table table-hover">
+        <thead>
+         <tr class="visible-lg visible-md visible-sm" style="font-size: 12px;">
+           <th style="text-align: center;">추천수 </th>
+           <th style="text-align: center;">분류</th>
+           <th style="text-align: center;">제목</th>
+           <th style="text-align: center;">글쓴이</th>
+           <th style="text-align: center;">날짜</th>
+           <th style="text-align: center;">조회수</th>
+         </tr>
+         </thead>
+         <tbody style= "font-size: 15px; cursor: pointer">
+          <tr style="background-color: #f5f5f5; font-size: 12px;">
+           <td></td>
+           <td><span style="background-color:black; padding-top: 2px;  padding-bottom: 2px; font-size: 11px;" class="label label-default"> 공지 </span></td></td>
+           <td class="title" style="color:red;"><b>(댓)글 쓰기는 회원만 가능합니다.</b></td>
+           <td></td>
+           <td></td>
+           <td></td>
+         </tr>
+         <tr style="font-size: 12px;">
+           <td><span class="good">7</span>/<span>-2</span></td>
+           <td class="gif"><b>gif</b></td>
+           <td class="title"><a style="color:black" href="main/content.html">[놀면뭐하니] 정체성에 혼란이 온 유두래곤 ㅋㅋㅋㅋ</a>
+           <a style="margin-left: 5px; font-size: 11px;" class="replyCount">5</a>
+           <img style="position: relative; left: 2px;" src="img/new.gif">
+           <img style="position: relative; left: 1px;" src="img/image.png"></td>
+           <td>Ceril</td>
+           <td>7분 전</td>
+           <td>6811</td> 
+         </tr>
+         <tr style="font-size: 12px;">
+           <td><span class="good">4</span>/<span>-5</span></td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="main/content2.html">진짜 싹쓰리</a>
+           <a style="margin-left: 5px; font-size: 11px;" class="replyCount">3</a>
+           <img style="position: relative; left: 2px;" src="img/new.gif">
+           <img style="position: relative; left: 1px;"src="img/image.png"></td>
+           <td>칼스</td>
+           <td>59분전</td>
+           <td>1147</td>
+         </tr>
+         <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a>
+           <img style="position: relative; left: 6px;" src="img/new.gif">
+           <img style="position: relative; left: 5px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>4시간전</td>
+           <td>214</td>
+         </tr>
+          <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a>
+           <img style="position: relative; left: 6px;" src="img/new.gif">
+           <img style="position: relative; left: 5px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>4시간전</td>
+           <td>214</td>
+         </tr>
+          <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a>
+           <img style="position: relative; left: 6px;" src="img/new.gif">
+           <img style="position: relative; left: 5px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>4시간전</td>
+           <td>214</td>
+         </tr>
+          <tr style="font-size: 12px;">
+             <td><span class="good">4</span></td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a>
+           <img style="position: relative; left: 6px;" src="img/new.gif">
+           <img style="position: relative; left: 5px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>7시간전</td>
+           <td>214</td>
+         </tr>
+           <tr style="font-size: 12px;">
+             <td><span class="good">5</span></td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a>
+           <img style="position: relative; left: 6px;" src="img/new.gif">
+           <img style="position: relative; left: 5px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>12시간전</td>
+           <td>214</td>
+         </tr>
+           <tr style="font-size: 12px;">
+             <td>-4</td>
+           <td class="gif"><b>gif</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a>
+           <img style="position: relative; left: 6px;" src="img/new.gif">
+           <img style="position: relative; left: 5px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>15시간전</td>
+           <td>214</td>
+         </tr>
+           <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="gif"><b>gif</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a>
+           <img style="position: relative; left: 6px;" src="img/new.gif">
+           <img style="position: relative; left: 5px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>19시간전</td>
+           <td>214</td>
+         </tr>
+           <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.08.01</td>
+           <td>314</td>
+         </tr>
+           <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpgif"><b>jpgif</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.08.01</td>
+           <td>414</td>
+         </tr>
+         <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.08.01</td>
+           <td>314</td>
+         </tr>
+           <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpgif"><b>jpgif</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.08.01</td>
+           <td>414</td>
+         </tr>
+         
+         <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.08.01</td>
+           <td>314</td>
+         </tr>
+           <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpgif"><b>jpgif</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.07.31</td>
+           <td>414</td>
+         </tr>
+         <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.07.31</td>
+           <td>314</td>
+         </tr>
+           <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="gif"><b>gif</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.07.31</td>
+           <td>214</td>
+         </tr>
+         <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.07.31</td>
+           <td>314</td>
+         </tr>
+           <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="gif"><b>gif</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+            <td>2020.07.30</td>
+           <td>514</td>
+         </tr>
+         <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpg"><b>jpg</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.07.30</td>
+           <td>514</td>
+         </tr>
+           <tr style="font-size: 12px;">
+             <td>0</td>
+           <td class="jpgif"><b>jpgif</b></td>
+           <td class="title"><a style="color:black" href="#">테이블 테스트  테이블 테스트 테이블 테스트</a><img style="position: relative; left: 7px;" src="img/image.png"></td>
+           <td>홍길동</td>
+           <td>2020.07.29</td>
+           <td>614</td>
+         </tr>
+       </table>
+    </div>
+    <div>
+    <button onclick = "location.href = 'main/index.html'" style="width: 53px; padding-left: 3px; padding-right: 3px; padding-bottom: 3px; margin-left:10px; margin-top: -30px; " type="button" class="btn btn-default"><img src="img/list.png">
+    	<b style="position: relative; font-size: 10px; margin-left: 3px;" >목록</b></button>
+	 </div>
+		<div style="text-align: center; margin-top: -20px;">
+			<ul class="pagination pagination-sm">
+				<li class="disabled"><span>« Prev</span></li>
+				<li class="active"><span>1</span></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+				<li><a href="#">7</a></li>
+				<li><a href="#">8</a></li>
+				<li><a href="#">9</a></li>
+				<li><a href="#">10</a></li>
+				<li><a href="#">Next »</a></li>
+			</ul>
+		</div>
+	</div>	
+<!-- --------------------------------------------------------------- 최근 글 목록 --------------------------------------------------------------------------------------->
+	<div class="visible-lg visible-md" style="width:100%; text-align:center; margin-bottom: 20px; height: 370px;">
+		<div style="display:inline-block;">
+			<table class="table table-hover visible-lg visible-md">
+				<thead>
+					<tr
+						style="font-size: 12px; background-color: GAINSBORO">
+						<th>최근 많이 본 글</th>
+					</tr>
+				</thead>
+					<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important text-align: left!important;
+						    display: inline-block;
+						    width: 280px;
+						    white-space: nowrap;
+						    overflow: hidden;
+						    text-overflow: ellipsis;">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">1</span>[놀면뭐하니] 정체성에 혼란이 온 유두래곤 ㅋㅋㅋㅋ
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">2</span>내가 보낸 카톡은 안 읽는 사람 특징
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">3</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">4</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">5</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">6</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">7</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">8</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">9</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-left: 0; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">10</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+			</table>
+		</div>
+		<div style="display:inline-block;">
+			<table class="table table-hover visible-lg visible-md">
+				<thead>
+					<tr
+						style="font-size: 12px; background-color: GAINSBORO">
+						<th>최근 댓글 많은 글</th>
+					</tr>
+				</thead>
+					<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important; text-align: left!important;
+    display: inline-block;
+    width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">1</span>[놀면뭐하니] 정체성에 혼란이 온 유두래곤 ㅋㅋㅋㅋ
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">2</span>내가 보낸 카톡은 안 읽는 사람 특징
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">3</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">4</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">5</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">6</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">7</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">8</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">9</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-left: 0; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">10</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+			</table>
+		</div>
+		<div style="display:inline-block!important">
+			<table style="width: 100%;" class="table table-hover visible-lg">
+				<thead>
+					<tr
+						style="font-size: 12px; background-color: GAINSBORO">
+						<th>최근 추천 많은 글</th>
+					</tr>
+				</thead>
+					<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important; text-align: left!important;
+    display: inline-block;
+    width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">1</span>[놀면뭐하니] 정체성에 혼란이 온 유두래곤 ㅋㅋㅋㅋ
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">2</span>내가 보낸 카톡은 안 읽는 사람 특징
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">3</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">4</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">5</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">6</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">7</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">8</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">9</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-left: 0; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">10</span>테이블 테스트  테이블 테스트 테이블 테스트
+             			</td>
+        			</tr>
+			</table>
+		</div>
+		<div style="display:inline-block!important; width:280px">
+			<table style="width: 100%;" class="table table-hover visible-lg visible-md">
+				<thead>
+					<tr
+						style="font-size: 12px; color: #bdbdbd; background-color: #5f5f5f;">
+						<th>커뮤니티 최신글</th>
+					</tr>
+				</thead>
+					<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important; text-align: left!important;
+             			
+						    display: inline-block;
+						    width: 280px;
+						    white-space: nowrap;
+						    overflow: hidden;
+						    text-overflow: ellipsis;
+						    float: left;">
+             			[놀면뭐하니] 정체성에 혼란이 온 유두래곤 ㅋㅋㅋㅋ
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			내가 보낸 카톡은 안 읽는 사람 특징
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<!-- ---------------------------------------- 모바일 최신 글 목록 ----------------------------------------------------------------------- -->
+	<div style="border-bottom: 1px solid gray;">
+		<div class="visible-xs visible-sm"style="display:inline-block; width:100%">
+			<table style="width:100%" class="table table-hover">
+				<thead>
+					<tr
+						style="font-size: 12px; background-color: GAINSBORO">
+						<th>최근 많이 본 글</th>
+					</tr>
+				</thead>
+					<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">1</span>[놀면뭐하니] 정체성에 혼란이 온 유두래곤 ㅋㅋㅋㅋ
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">2</span>내가 보낸 카톡은 안 읽는 사람 특징
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:red; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">3</span>최근 많이 본 글 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">4</span>최근 많이 본 글 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">5</span>최근 많이 본 글 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">6</span>최근 많이 본 글 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">7</span>최근 많이 본 글 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">8</span>최근 많이 본 글 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">9</span>최근 많이 본 글 테이블 테스트
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			<span style="background-color:WHITE; color:black; padding-left: 0; padding-top: 2px;  padding-bottom: 2px; margin-right:10px" class="label label-default">10</span>최근 많이 본 글 테이블 테스트
+             			</td>
+        			</tr>
+			</table>
+		</div>
+			<div class="visible-xs visible-sm"style="display:inline-block; width:100%">
+			<table style="width:100%" class="table table-hover">
+				<thead>
+					<tr
+						style="font-size: 12px; background-color: GAINSBORO">
+						<th>커뮤니티 최신글</th>
+					</tr>
+				</thead>
+					<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			[놀면뭐하니] 정체성에 혼란이 온 유두래곤 ㅋㅋㅋㅋ <span class="replyCount2">[4]</span>
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			내가 보낸 카톡은 안 읽는 사람 특징<span class="replyCount2">[3]</span>
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+        			<tr style="font-size: 12px;">
+             			<td style=" text-align:left!important">
+             			커뮤니티 최신글 테이블 테스트 
+             			</td>
+        			</tr>
+			</table>
+			<div style="background-color: #e8e8e8; font-size: 16px; padding-top: 6px; padding-bottom: 6px; border-bottom: 1px solid #c3c0c0;" class="badge-list visible-xs">
+				<div class="container">
+					<span style="font-size: 10px; background-color:#5d5959" class="label label-default"><a href="#">인기글</a></span>
+					<span style="font-size: 10px; background-color:#5d5959" class="label label-default"><a href="#">베스트</a></span>
+					<span style="font-size: 10px;" class="label label-default"><a href="#">유머/이슈</a></span>
+					<span style="font-size: 10px;" class="label label-default"><a href="#">방송/연예</a></span>
+					<span style="font-size: 10px;" class="label label-default"><a href="#">핫딜/무료</a></span>
+				</div>
+				<div class="container">
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">쑥덕쑥덕</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">만화</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">정치/사회</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">pc겜</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">콘솔겜</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">모바일겜</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">국내축구</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">해외축구</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">국내야구</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">해외야구</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">농구</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">배구</a></span>
+				</div>
+			</div>
+			<div>
+				<div class="visible-xs" style="text-align:center; padding-top:15px">
+					<button onclick = "location.href = 'main/login.html'" style="width: 60px; padding-left: 3px; color: #717171; padding-right: 3px; padding-bottom: 3px; margin-left:10px; " type="button" class="btn btn-default">
+						<div>
+							<span style="position: relative; top: 3px;" class="glyphicon glyphicon-log-in"></span>
+							<b style="position: relative; font-size: 10px; margin-left: 3px;">로그인</b>
+						</div>
+					</button>
+					<button onclick = "location.href = 'main/join.html'" style="width: 70px; padding-left: 3px; color: #717171; padding-right: 3px; padding-bottom: 3px; margin-left:10px; " type="button" class="btn btn-default">
+						<div>
+							<span style="position: relative; top: 3px;" class="glyphicon glyphicon-user"></span>
+							<b style="position: relative; font-size: 10px; margin-left: 3px;">회원가입</b>
+						</div>
+					</button>
+					<button style="width: 53px; padding-left: 3px; color: #717171; padding-right: 3px; padding-bottom: 3px; margin-left:10px; " type="button" class="btn btn-default">
+						<div id="pcscreen">
+							<span style="position: relative; top: 4px;" class="glyphicon glyphicon-blackboard"></span>
+							<b style="position: relative; font-size: 10px; margin-left: 3px;" > PC</b>
+						</div>
+					</button>
+				</div>
+				<div class="visible-xs container" style="text-align:center; font-size:10px; margin-bottom:10px; margin-top:20px"> 
+					<a style="color:black; cursor:pointer; border-right: 1px solid; padding-right: 10px; margin-right:5px">이용약관</a>
+					<a style="color:black; cursor:pointer; border-right: 1px solid; padding-right: 10px; margin-right:5px">개인정보취급방침</a>
+					<a style="color:black; cursor:pointer; border-right: 1px solid; padding-right: 10px; margin-right:5px">책임의 한계와 법적고지</a>
+					<a style="color:black; cursor:pointer; border-right: 1px solid; padding-right: 10px; margin-right:5px">청소년보호정책</a>
+					<a style="color:black; cursor:pointer; border-right: 1px solid; padding-right: 10px; margin-right:5px">공지사항</a>
+					<a style="color:black; cursor:pointer; margin-right:5px">문의/삭제 요청</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- -------------------------------------------------------------footer------------------------------------------------------------------------- -->		
+	<div class="container">
+		<div class="footer visible-sm visible-md visible-lg" style="font-size:10px; margin-bottom:10px; margin-top:20px">
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">이용약관</a>
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">개인정보취급방침</a>
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">책임의 한계와 법적고지</a>
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">청소년보호정책</a>
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">공지사항</a>
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">문의/삭제 요청</a>
+		 © 2020 bootstrap html
+		</div>
+		
+	</div>
+</div>
+	
+<!-- -----------------------------------------------------------------모달 메뉴창 ---------------------------------- -->	
+	<div id="modal_aside_right" class="modal fixed-left" tabindex="-1" role="dialog">
+  <div style="margin-top: 4px; width: 300px; height: 100%;" class="modal-dialog modal-dialog-aside">
+    <div class="modal-content">
+      <div style="background-color: #c24938; padding-top: 14px; padding-bottom: 15px" class="modal-header">
+        <h5 class="modal-title">
+        	<a href="main/login.html" style="color:white; font-size:15px; margin-left: 30px;"><span style="margin-right: 5px;" class="glyphicon glyphicon-lock"></span>로그인</a>
+        	<a href="main/join.html" style="color:white; font-size:15px; margin-right: 30px; float:right"><span style="margin-right: 5px;" class="glyphicon glyphicon-edit"></span>회원가입</a>
+        </h5>
+      </div> 
+    <div class="panel-group" id="accordion">
+    	<div class="panel panel-default">
+    	<div style="background-color:white;" class="panel-heading">
+    	 <h4 class="panel-title">
+             <span style="float: left; color: #73716c; font-size: 15px;"  class="glyphicon glyphicon-home"></span>
+             <a style="text-decoration: none!important; position: relative; top: -3px; font-size: 15px; margin-left: 14px" href="main/index.html"><b>HOME</b></a>
+         </h4>
+    	</div>
+    	</div>
+        <div style="margin-top: -5px;" class="panel panel-default">
+          <div  style="background-color:white; text-decoration: none!important" class="panel-heading" id="accordion1">
+            <h4 class="panel-title">
+             <span style="float: left; color: #efc16d; font-size: 15px;" class="glyphicon glyphicon-folder-open"></span>
+             <a style="text-decoration: none!important; position: relative; top: -3px; margin-left: 14px; font-size: 15px;" href="main/index.html"><b>이것저것</b></a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                <b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+             
+            </h4>
+          </div>
+         </div>
+          <div id="collapseOne" class="panel-collapse collapse in">
+         <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 style="margin-left: -16px;"class="panel-title">
+            <span style="background-color:black; background-color: #a2a19d; margin-right:3px; padding-top: 10px; padding-bottom: 11px; border-radius: 2px; color: #a2a19d;">.</span>
+            <a style="text-decoration: none!important; font-size: 14px; margin-left: 5px;" href="#">이것저것</a>
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+            	<b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+            </h3>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse in">
+            <div class="panel-body"><a style="color:black; font-size: 13px; cursor:pointer; text-decoration: none!importantv">유머/이슈</a></div>
+			<div class="panel-body"><a style="color:black; font-size: 13px; cursor:pointer; text-decoration: none!important">방송/연예</a></div>
+			<div class="panel-body"><a style="color:black; font-size: 13px; cursor:pointer; text-decoration: none!important">핫딜/무료</a></div>
+          </div>
+           </div>
+          <div style="margin-top: -5px;"class="panel panel-default">
+        <div class="panel-heading">
+			 <h3 style="margin-left: -16px;"class="panel-title">
+            <span style="background-color:black; background-color: #a2a19d; margin-right:3px; padding-top: 10px; padding-bottom: 11px; border-radius: 2px; color: #a2a19d;">.</span>
+            <a style="text-decoration: none!important; font-size: 14px; margin-left: 5px;" href="#">인기</a>
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+            	<b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+            </h3>
+		</div>
+			<div id="collapseThree"
+				class="panel-collapse collapse in">
+				<div style="font-size: 13px" class="panel-body"><a style="color:black; font-size: 13px; cursor:pointer; text-decoration: none!importantv">인기글</a></div>
+				<div style="font-size: 13px" class="panel-body"><a style="color:black; font-size: 13px; cursor:pointer; text-decoration: none!importantv">베스트 인기글</a></div>
+			</div>
+          </div>
+         </div> 
+         <div class="panel panel-default">
+          <div  style="background-color:white; text-decoration: none!important" class="panel-heading" id="accordion">
+            <h4 class="panel-title">
+            <span style="float: left; color: #efc16d" class="glyphicon glyphicon-folder-open"></span>
+             <a style="text-decoration: none!important; font-size: 14px; margin-left: 14px" href="#"><b>커뮤니티</b></a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+             
+            </h4>
+          </div>
+         </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+         <div class="panel panel-default">
+          <div class="panel-heading">
+             <h3 style="margin-left: -16px;"class="panel-title">
+            <span style="background-color:black; background-color: #a2a19d; margin-right:3px; padding-top: 10px; padding-bottom: 11px; border-radius: 2px; color: #a2a19d;">.</span>
+            <a style="text-decoration: none!important; font-size: 14px; margin-left: 5px;" href="#">게임</a>
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+            	<b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+            </h3>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse in">
+            <div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">pc게임</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">콘솔게임</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">모바일 게임</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">플래시 게임</a></div>
+          </div>
+           </div>
+          <div style="margin-top: -5px;"class="panel panel-default">
+        <div class="panel-heading">
+			 <h3 style="margin-left: -16px;"class="panel-title">
+            <span style="background-color:black; background-color: #a2a19d; margin-right:3px; padding-top: 10px; padding-bottom: 11px; border-radius: 2px; color: #a2a19d;">.</span>
+            <a style="text-decoration: none!important; font-size: 14px; margin-left: 5px;" href="#">스포츠</a>
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+            	<b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+            </h3>
+		</div>
+			<div id="collapse3" class="panel-collapse collapse in">
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important;">국내축구</a></div>
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">해외축구</a></div>
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">국내야구</a></div>
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">해외야구</a></div>
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">농구</a></div>
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">배구</a></div>
+			</div>
+          </div>
+              <div style="margin-top: -5px;"class="panel panel-default">
+        <div class="panel-heading">
+			 <h3 style="margin-left: -16px;"class="panel-title">
+            <span style="background-color:black; background-color: #a2a19d; margin-right:3px; padding-top: 10px; padding-bottom: 11px; border-radius: 2px; color: #a2a19d;">.</span> 
+            <a style="text-decoration: none!important; font-size: 14px; margin-left: 5px;" href="#">게시판</a>
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+            	<b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+            </h3>
+		</div>
+			<div id="collapse4" class="panel-collapse collapse in">
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">쑥덕쑥덕</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">만화</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">음악감상</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">정치/사회</a></div>
+			</div>
+          </div>
+         </div> 
+      </div>
+    </div>
+  </div> <!-- modal-bialog .// -->
+</div> <!-- modal.// -->
+
+
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) *****순서중요***** 먼저 jquery 올리고 그다음이 bootstrap -->
+    <script src="js/jquery-3.5.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+	<script>
+	
+	 $(document).ready(function(){
+		  window.resizeTo(620, 690);
+		 });
+	
+	
+	
+	
+    /* 관리자 아이디 입력시 관리자 페이지로 or 그냥 아이디 입력시 일반회원 페이지로 or 미입력시 입력알림창 뜬다. */
+	function login(){
+        var id = $('input[name=id]').val();
+        var pwd = $('input[name=pwd]').val();
+        
+        console.log("id" + id);
+        console.log("pwd" + pwd);
+        
+        if(id == "admin" && (pwd != null && pwd != "")){
+        	
+        	alert("관리자 아이디로 로그인 하셨습니다.");
+        	location.href="main/adminPage.html";
+        	
+        } else if(id == null || id == ''){
+        	alert("아이디를 입력해주세요");
+
+        	
+        } else if(pwd == null || pwd == ''){
+        	alert("비밀번호를  입력해주세요");
+
+        	
+        } else {
+        	alert("꾸르에 오신것을 환영합니다");
+        	location.href="main/indexLogin.html";
+        }; 
+    };
+    </script>
+	<script>
+	
+	    $(window).resize(function(){
+		
+	
+	    	  var width_size = window.outerWidth;
+	    	  var loginBar = $('#loginBar');
+			  var container = loginBar.closest('div.container');
+	
+	    	  // 가로가 861 이하인지 if문으로 확인
+	    	  if (width_size <= 861) {
+	
+	    	    console.log('width: ' + width_size);
+	
+				 if(container.hasClass('container')){
+					container.removeClass('container');
+			 	 
+				};
+					
+	    	  }  else if(width_size > 860){
+	    		  
+	     		 var div = loginBar.closest('div.top');
+	     			
+	     		if(!div.hasClass('container')){
+					div.addClass('container');
+			 	 
+				};
+	     	  }; 
+	    });
+	    	  
+	 </script>
+  </body>
+</html>

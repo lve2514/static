@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <!-- 반응형의 경우 꼭 필요한 태그/ scale 초기 화면크기 비율 1-->
+    <!-- viewport 정보는 반응형에서 꼭 필요하다. -->
+    <title>규르-규르잼</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+	<link href="../css/bootstrap-theme.css" rel="stylesheet">
+	<link href="../css/custom.css" rel="stylesheet">
+	<link href="../css/customFont.css" rel="stylesheet">
+  </head>
+ <style>
+        body { margin-top: -16px; padding-top: 20px; font-size: 20px;  }
+        .btn , .form-control { border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    		   border: 1px solid #bbbbbb;
+               border-bottom-color: #a2a2a2;}
+               
+        @media screen and (min-width: 767px) { 
+		#userInfo { margin-top: 20px; padding-bottom: 30px; border-bottom: 2px solid gray; margin-bottom: 0!important; }}       
+               
+</style>
+  <body>
+	<div class="container top">
+		<!--부트스트렙에서 항상 container가 기준이고 <div container>가 있기때문에 화면을 꽉 채우지 않고 좌우공백을 가지고 가운데 정렬한다.  -->
+		<div id="loginBar" style="float: right" class="login-form visible-lg visible-md visible-sm">
+				<span style="color:black; font-size: 12px;"><span style="color:#777; font-size:11px;"class="nickName"><b>회원 닉네임</b></span> 님 꾸르에 오신것을 환영합니다.</span>
+				<span>
+					<a href="userInfo.html" style="color:black; font-size: 12px; margin-left: 8px; cursor: pointer">회원정보 보기</a>
+					<a href="index.html" style="color:black; font-size: 12px; margin-left: 5px; cursor: pointer">로그아웃</a>
+				</span>
+		</div>
+
+		<div class="visible-lg visible-md visible-sm">
+		<!-- 로고 이미지 -->
+			<a href="index.html"><img style="margin-bottom: -30px;" src="../img/honey.png"></a>
+		<!-- 로고 옆 검색창 -->
+			<div class="input-group">
+				<input style="width: 150px; border: 3px solid #A1A1A1; height: 24px; line-height: 20px; position: absolute;" type="text" class="form-control">
+				<span class="input-group-btn">
+					<button style="margin-left: 2px; height: 24px; border-radius: 4px; width: 44px;" class="btn btn-default"><b style="position: relative; font-size: 12px;">검색</b></button>
+				</span>
+			</div>
+		</div>
+		<nav class="navbar navbar-default">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div style="background-color:#c24938;" class="navbar-header">
+				<!-- "navbar-header" 모바일때 표시되는 메뉴 버튼(PC 버젼에서는 보이지 않는다.) -->
+				<button style="background-color:#c24938" type="button" class="navbar-toggle toggle-right" data-toggle="modal" data-target="#modal_aside_right">
+					<!--  <span class="sr-only">Toggle navigation</span> 시각장애인분들을 위한 태그 -->
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<button style="padding: 4px 8px 0 8px; font-size: 16px; margin-top: 11px; margin-right: -2px; color: white; background-color:#c24938" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+	      			 <span class="glyphicon glyphicon-search"></span>
+	      		</button>
+				<a style="color:white; font-size: 16px;font-weight: bold" class="navbar-brand visible-xs" href="index.html">규르 </a>
+			</div>
+			<div style="padding: 0; background-color: white;"class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul style="padding: 0; margin: 0;"class="nav navbar-nav">
+				<input style="padding-left:10px; height: 40px; width: 100%; display:inline-block" type="text" class="form-control visible-xs" placeholder="사이트 통합검색">
+				 <button style="display:inline-block; margin:0; margin-top: -40px; background-color: #c24938;" type="button" class="navbar-toggle visible-xs" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				 	<span style="color: white;" class="glyphicon glyphicon-remove visible-xs"></span>
+				 </button>
+				</ul>
+			</div>
+			
+
+	<div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a style="font-size: 15px; color:white; text-shadow: 0px 1px 0px black; padding-left: 40px; padding-right: 40px; margin-left: -15px; border-radius: 3px 0 0 3px;"
+               href="#" class="dropdown-toggle" data-toggle="dropdown">이것저것</a>
+            <ul class="dropdown-menu">
+              <li style=" text-align: center;
+					      font-size: 13px;
+					      background-color: #E2E2E2;
+			          	  color: black;
+					      margin-left: 10px;
+    					  margin-right: 10px;
+    					  padding-top: 2px;
+    					  padding-bottom: 2px; "
+    			  class="dropdown-header">이것저것</li>
+              <li><a style="font-size: 11px; margin-left: 10px; margin-right: 10px; padding-left: 10px;" href="#">유머/이슈</a></li>
+              <li><a style="font-size: 11px;" href="#">방송/연예</a></li>
+              <li><a style="font-size: 11px;" href="#">핫딜/무료</a></li>
+              <li style=" text-align: center;
+					      font-size: 13px;
+					      background-color: #E2E2E2;
+					      color: black;
+					      margin-left: 10px;
+    					  margin-right: 10px;
+    					  padding-top: 2px;
+    					  padding-bottom: 2px;"
+  					class="dropdown-header">인기</li>
+              <li><a style="font-size: 11px; href="#">인기글</a></li>
+              <li><a style="font-size: 11px; href="#">베스트 인기글</a></li>
+            </ul>
+          </li>
+             <li class="dropdown">
+            <a style="font-size: 15px; color:white; padding-left: 40px; padding-right: 40px; text-shadow: 0px 1px 0px black;" href="#" class="dropdown-toggle" data-toggle="dropdown">커뮤니티</a>
+            <ul style="width: 488px; height: 160px;" class="dropdown-menu">
+            <ul class="topbar" style="list-style:none; display:inline-block; position:relative; top: -40px; right: 3px; margin-left:-40px;">
+           	  <li style="font-size: 13px; padding-top: 2px; padding-bottom: 2px;"class="dropdown-header">게임</li>
+	              <li><a style="text-decoration: none; font-size: 11px; color: #262626; margin-left: 20px;" href="#">PC게임</a></li>
+	              <li><a style="font-size: 11px; color: #262626; margin-left: 20px;" href="#">콘솔게임</a></li>
+	              <li><a style="font-size: 11px; color: #262626; margin-left: 20px;" href="#">모바일 게임</a></li>
+	              <li><a style="font-size: 11px; color: #262626; margin-left: 20px;" href="#">플래시 게임</a></li>
+              </ul>
+          <ul class="topbar" style="list-style: none; position: relative; display:inline-block;">
+           <li style="margin-left: -50px; font-size: 13px; padding-top: 2px; padding-bottom: 2px;" class="dropdown-header">스포츠</li>
+              <li><a style="font-size: 11px; color: #262626; margin-left: -40px;" href="#">국내축구</a></li>
+              <li><a style="font-size: 11px; color: #262626; margin-left: -40px;" href="#">해외축구</a></li>
+              <li><a style="font-size: 11px; color: #262626; margin-left: -40px;" href="#">국내야구</a></li>
+              <li><a style="font-size: 11px; color: #262626; margin-left: -40px;" href="#">해외야구</a></li>
+              <li><a style="font-size: 11px; color: #262626; margin-left: -40px;" href="#">농구</a></li>
+              <li><a style="font-size: 11px; color: #262626; margin-left: -40px;" href="#">배구</a></li> 
+          </ul>
+          <ul class="topbar" style="list-style: none; position: relative; top: -40px; left:4px; display: inline-block;">
+           <li style="margin-left: -50px; font-size: 13px; padding-top: 2px; padding-bottom: 2px;" class="dropdown-header">게시판</li>
+              <li><a style="font-size: 11px; color: #262626; margin-left: -40px;" href="#">쑥덕쑥덕</a></li>
+              <li><a style="font-size: 11px; color: #262626; margin-left: -40px;" href="#">만화</a></li>
+              <li><a style="font-size: 11px; color: #262626; margin-left: -40px;" href="#">음악감상</a></li>
+              <li><a style="font-size: 11px; color: #262626; margin-left: -40px;" href="#">정치/사회</a></li>
+          </ul>  
+          </ul>    
+         </li>
+         </ul>      
+         </div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+		</nav>
+	<div class= "userPage">
+		<ul style="font-size:12px"class="nav nav-tabs">
+		      <li><a style="color:black" href="userInfo.html">회원정보 보기</a></li>
+		      <li><a style="color:black" href="#tab1">작성 글 보기</a></li>
+		      <li><a style="color:black" href="#tab2">작성 댓글 보기</a></li>
+   		 </ul>
+		<form id="userInfo" style="margin-top: 20px; margin-bottom: 30px;" class="form-horizontal tab-pane" >
+			<span><b>비밀번호 재확인</b></span>
+			<div style="font-size:10px; margin-top: 10px;">회원의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인 합니다.</div>
+			<div style="width: 100%;" class="form-group">
+				<div style="position:relative; margin-left: 20px; margin-top: 10px;">
+				<div style="margin-left: 0;" class="form-group">
+					<div style="position:relative;">
+						<input style="height:27px; width: 200px; padding-left:10px" type="text" class="form-control" value="user" readonly>
+					</div>
+				</div>
+				<div style="margin-left: 0;" class="form-group">
+					<div style="position:relative;">
+						<input style="height:27px; width: 200px; padding-left:10px" type="password" class="form-control">
+						<button onclick = "location.href = 'userInfoModify.html'" id="submitButton" style="margin-left: -2px; margin-top: 3px; width: 40px;" type="button" class="btn btn-default">
+			 				<b style="position: relative; font-size: 10px;" >확인</b>
+			 			</button>
+					</div>
+				</div>
+				</div>
+			</div>
+		</form>
+	</div>
+		<div style="background-color: #e8e8e8; font-size: 16px; padding-top: 6px; padding-bottom: 6px; border-bottom: 1px solid #c3c0c0;" class="badge-list visible-xs">
+				<div class="container">
+					<span style="font-size: 10px; background-color:#5d5959" class="label label-default"><a href="#">인기글</a></span>
+					<span style="font-size: 10px; background-color:#5d5959" class="label label-default"><a href="#">베스트</a></span>
+					<span style="font-size: 10px;" class="label label-default"><a href="#">유머/이슈</a></span>
+					<span style="font-size: 10px;" class="label label-default"><a href="#">방송/연예</a></span>
+					<span style="font-size: 10px;" class="label label-default"><a href="#">핫딜/무료</a></span>
+				</div>
+				<div class="container">
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">쑥덕쑥덕</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">만화</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">정치/사회</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">pc겜</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">콘솔겜</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">모바일겜</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">국내축구</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">해외축구</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">국내야구</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">해외야구</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">농구</a></span>
+					<span style="font-size: 10px;"class="label label-primary"><a href="#">배구</a></span>
+				</div>
+			</div>
+		<div>
+							<div class="visible-xs" style="text-align:center; padding-top:15px">
+					<button onclick = "location.href = 'userInfo.html'" style="width: 70px; padding-left: 3px; color: #717171; padding-right: 3px; padding-bottom: 3px; margin-left:10px; " type="button" class="btn btn-default">
+						<div>
+							<span style="position: relative; top: 3px;" class="glyphicon glyphicon-user"></span>
+							<b style="position: relative; font-size: 10px; margin-left: 3px;">회원정보</b>
+						</div>
+					</button>
+					<button onclick = "location.href = 'index.html'" style="width: 70px; padding-left: 3px; color: #717171; padding-right: 3px; padding-bottom: 3px; margin-left:10px; " type="button" class="btn btn-default">
+						<div>
+							<span style="position: relative; top: 3px;" class="glyphicon glyphicon-log-out"></span>
+							<b style="position: relative; font-size: 10px; margin-left: 3px;">로그아웃</b>
+						</div>
+					</button>
+					<button style="width: 53px; padding-left: 3px; color: #717171; padding-right: 3px; padding-bottom: 3px; margin-left:10px; " type="button" class="btn btn-default">
+						<div id="pcscreen">
+							<span style="position: relative; top: 4px;" class="glyphicon glyphicon-blackboard"></span>
+							<b style="position: relative; font-size: 10px; margin-left: 3px;" > PC</b>
+						</div>
+					</button>
+				</div>
+			<div class="visible-xs container" style="text-align:center; font-size:10px; margin-bottom:10px; margin-top:20px"> 
+				<a style="color:black; cursor:pointer; border-right: 1px solid; padding-right: 10px; margin-right:5px">이용약관</a>
+				<a style="color:black; cursor:pointer; border-right: 1px solid; padding-right: 10px; margin-right:5px">개인정보취급방침</a>
+				<a style="color:black; cursor:pointer; border-right: 1px solid; padding-right: 10px; margin-right:5px">책임의 한계와 법적고지</a>
+				<a style="color:black; cursor:pointer; border-right: 1px solid; padding-right: 10px; margin-right:5px">청소년보호정책</a>
+				<a style="color:black; cursor:pointer; border-right: 1px solid; padding-right: 10px; margin-right:5px">공지사항</a>
+				<a style="color:black; cursor:pointer; margin-right:5px">문의/삭제 요청</a>
+			</div>
+		</div>
+		
+	</div>
+<!-- -------------------------------------------------------------footer------------------------------------------------------------------------- -->		
+	<div class="container">
+		<div class="footer visible-sm visible-md visible-lg" style="font-size:10px; margin-bottom:10px; margin-top:20px">
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">이용약관</a>
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">개인정보취급방침</a>
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">책임의 한계와 법적고지</a>
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">청소년보호정책</a>
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">공지사항</a>
+			<a style="color:black; border-right: 1px solid; padding-right: 10px; cursor:pointer; margin-right:5px">문의/삭제 요청</a>
+		 © 2020 bootstrap html
+		</div>
+		
+	</div>
+	
+	
+<!-- -----------------------------------------------------------------모달 메뉴창 ---------------------------------- -->	
+	<div id="modal_aside_right" class="modal fixed-left" tabindex="-1" role="dialog">
+  <div style="margin-top: 4px; width: 300px; height: 1200px;" class="modal-dialog modal-dialog-aside">
+    <div class="modal-content">
+     <div style="border:0; margin-bottom:0" class="panel panel-default">
+      <div style="background-color: #ac4436; cursor:pointer; padding-top: 14px; padding-bottom: 16px; border-bottom:0" class="modal-header" data-toggle="collapse" data-parent="#accordion" href="#collapseTop">
+        <h5 class="modal-title">
+        	<a href="login.html"style="color:white; font-size:13px; margin-left: 10px; text-decoration:none">
+        		<img style="background-color: #c24938; float: left;height: 27px; border-radius: 50%; padding: 4px; position: relative; bottom: 4px;" src="../img/wiSpeechBubble.png">
+        	회원 닉네임</a><b style="color:white; float: right; margin-top: 5px; position: relative; top: 4px" class="caret"></b>
+        </h5>
+      </div>
+      <div id="collapseTop" class="panel-collapse collapse in">
+      		
+            <div style="border-bottom: 1px solid #ac4436; background-color:#c24938" class="panel-body">
+            	<span style="color:white; position: relative; top: 3px;" class="glyphicon glyphicon-user"></span>
+            	<a href="userInfo.html" style="color:white; padding-left: 5px; font-size: 13px; cursor:pointer; text-decoration: none!important;">회원정보 보기</a>
+            </div>
+			<div style="border-bottom: 1px solid #ac4436; background-color:#c24938" class="panel-body">
+				<span style="color:white; position: relative; top: 3px;" class="glyphicon glyphicon-inbox"></span>
+				<a href="myBoard" style="color:white; padding-left: 5px; font-size: 13px; cursor:pointer; text-decoration: none!important;">작성 글 보기</a>
+			</div>
+			<div style="border-bottom: 1px solid #ac4436; background-color:#c24938" class="panel-body">
+				<span style="color:white; position: relative; top: 3px;" class="glyphicon glyphicon-list-alt"></span>
+				<a href="myReply" style="color:white; padding-left: 5px; font-size: 13px; cursor:pointer; text-decoration: none!important;">작성 댓글 보기</a>
+			</div>
+			<div style="border-bottom: 1px solid #ac4436; background-color:#c24938" class="panel-body">
+				<span style="color:white; position: relative; top: 3px;" class="glyphicon glyphicon-log-out"></span>
+				<a href="index.html" style="color:white; padding-left: 5px; font-size: 13px; cursor:pointer; text-decoration: none!important;">로그아웃</a>
+			</div>
+     	</div>
+     		
+     </div>
+    <div class="panel-group" id="accordion">
+    	<div class="panel panel-default">
+    	<div style="background-color:white;" class="panel-heading">
+    	 <h4 class="panel-title">
+             <span style="float: left; color: #73716c; font-size: 15px;"  class="glyphicon glyphicon-home"></span>
+             <a style="text-decoration: none!important; position: relative; top: -3px; font-size: 15px; margin-left: 14px" href="indexLogin.html"><b>HOME</b></a>
+         </h4>
+    	</div>
+    	</div>
+        <div style="margin-top: -5px;" class="panel panel-default">
+          <div  style="background-color:white; text-decoration: none!important" class="panel-heading" id="accordion1">
+            <h4 class="panel-title">
+             <span style="float: left; color: #efc16d; font-size: 15px;" class="glyphicon glyphicon-folder-open"></span>
+             <a style="text-decoration: none!important; position: relative; top: -3px; margin-left: 14px; font-size: 15px;" href="indexLogin.html"><b>이것저것</b></a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                <b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+             
+            </h4>
+          </div>
+         </div>
+          <div id="collapseOne" class="panel-collapse collapse in">
+         <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 style="margin-left: -16px;"class="panel-title">
+            <span style="background-color:black; background-color: #a2a19d; margin-right:3px; padding-top: 10px; padding-bottom: 11px; border-radius: 2px; color: #a2a19d;">.</span>
+            <a style="text-decoration: none!important; font-size: 14px; margin-left: 5px;" href="#">이것저것</a>
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+            	<b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+            </h3>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse in">
+            <div class="panel-body"><a style="color:black; font-size: 13px; cursor:pointer; text-decoration: none!importantv">유머/이슈</a></div>
+			<div class="panel-body"><a style="color:black; font-size: 13px; cursor:pointer; text-decoration: none!important">방송/연예</a></div>
+			<div class="panel-body"><a style="color:black; font-size: 13px; cursor:pointer; text-decoration: none!important">핫딜/무료</a></div>
+          </div>
+           </div>
+          <div style="margin-top: -5px;"class="panel panel-default">
+        <div class="panel-heading">
+			 <h3 style="margin-left: -16px;"class="panel-title">
+            <span style="background-color:black; background-color: #a2a19d; margin-right:3px; padding-top: 10px; padding-bottom: 11px; border-radius: 2px; color: #a2a19d;">.</span>
+            <a style="text-decoration: none!important; font-size: 14px; margin-left: 5px;" href="#">인기</a>
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+            	<b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+            </h3>
+		</div>
+			<div id="collapseThree"
+				class="panel-collapse collapse in">
+				<div style="font-size: 13px" class="panel-body"><a style="color:black; font-size: 13px; cursor:pointer; text-decoration: none!importantv">인기글</a></div>
+				<div style="font-size: 13px" class="panel-body"><a style="color:black; font-size: 13px; cursor:pointer; text-decoration: none!importantv">베스트 인기글</a></div>
+			</div>
+          </div>
+         </div> 
+         <div class="panel panel-default">
+          <div  style="background-color:white; text-decoration: none!important" class="panel-heading" id="accordion">
+            <h4 class="panel-title">
+            <span style="float: left; color: #efc16d" class="glyphicon glyphicon-folder-open"></span>
+             <a style="text-decoration: none!important; font-size: 14px; margin-left: 14px" href="#"><b>커뮤니티</b></a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+             
+            </h4>
+          </div>
+         </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+         <div class="panel panel-default">
+          <div class="panel-heading">
+             <h3 style="margin-left: -16px;"class="panel-title">
+            <span style="background-color:black; background-color: #a2a19d; margin-right:3px; padding-top: 10px; padding-bottom: 11px; border-radius: 2px; color: #a2a19d;">.</span>
+            <a style="text-decoration: none!important; font-size: 14px; margin-left: 5px;" href="#">게임</a>
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+            	<b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+            </h3>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse in">
+            <div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">pc게임</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">콘솔게임</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">모바일 게임</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">플래시 게임</a></div>
+          </div>
+           </div>
+          <div style="margin-top: -5px;"class="panel panel-default">
+        <div class="panel-heading">
+			 <h3 style="margin-left: -16px;"class="panel-title">
+            <span style="background-color:black; background-color: #a2a19d; margin-right:3px; padding-top: 10px; padding-bottom: 11px; border-radius: 2px; color: #a2a19d;">.</span>
+            <a style="text-decoration: none!important; font-size: 14px; margin-left: 5px;" href="#">스포츠</a>
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+            	<b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+            </h3>
+		</div>
+			<div id="collapse3" class="panel-collapse collapse in">
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important;">국내축구</a></div>
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">해외축구</a></div>
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">국내야구</a></div>
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">해외야구</a></div>
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">농구</a></div>
+				<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">배구</a></div>
+			</div>
+          </div>
+              <div style="margin-top: -5px;"class="panel panel-default">
+        <div class="panel-heading">
+			 <h3 style="margin-left: -16px;"class="panel-title">
+            <span style="background-color:black; background-color: #a2a19d; margin-right:3px; padding-top: 10px; padding-bottom: 11px; border-radius: 2px; color: #a2a19d;">.</span>
+            <a style="text-decoration: none!important; font-size: 14px; margin-left: 5px;" href="#">게시판</a>
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+            	<b style="float: right; margin-top: 5px;" class="caret"></b>
+              </a>
+            </h3>
+		</div>
+			<div id="collapse4" class="panel-collapse collapse in">
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">쑥덕쑥덕</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">만화</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">음악감상</a></div>
+			<div class="panel-body"><a style="color:black; cursor:pointer; font-size: 13px; text-decoration: none!important">정치/사회</a></div>
+			</div>
+          </div>
+         </div> 
+      </div>
+    </div>
+  </div> <!-- modal-bialog .// -->
+</div> <!-- modal.// -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) *****순서중요***** 먼저 jquery 올리고 그다음이 bootstrap -->
+    <script src="../js/jquery-3.5.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+    
+   	<script>
+
+   	$('#submitButton').onclick = function(){
+   		
+   		console.log(passwd);
+   		alert("aa");
+ 
+   	};
+   	</script>
+		<script>
+	
+	    $(window).resize(function(){
+		
+	
+	    	  var width_size = window.outerWidth;
+	    	  var loginBar = $('#loginBar');
+			  var container = loginBar.closest('div.container');
+	
+	    	  // 가로가 861 이하인지 if문으로 확인
+	    	  if (width_size <= 861) {
+	
+	    	    console.log('width: ' + width_size);
+	
+				 if(container.hasClass('container')){
+					container.removeClass('container');
+			 	 
+				};
+					
+	    	  }  else if(width_size > 860){
+	    		  
+	     		 var div = loginBar.closest('div.top');
+	     			
+	     		if(!div.hasClass('container')){
+					div.addClass('container');
+			 	 
+				};
+	     	  }; 
+	    });
+	    	  
+	 </script>
+	
+	
+  </body>
+</html>

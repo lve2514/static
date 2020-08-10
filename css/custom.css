@@ -1,0 +1,138 @@
+h2 {
+	margin: 20px 0
+}
+
+.panel {
+	border-radius: 0 !important;
+}
+
+.panel-body {
+	background-color: #eae9e9;
+	font-size: 15px !important;
+	padding-left: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.panel-title {
+	font-size: 18px !important
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: white !important;
+}
+
+.modal .modal-dialog-aside {
+	width: 350px;
+	max-width: 80%;
+	height: 100%;
+	margin: 0;
+	transform: translate(0);
+	transition: transform .2s;
+}
+
+.modal .modal-dialog-aside .modal-content {
+	height: inherit;
+	border: 0;
+	border-radius: 0;
+}
+
+.modal .modal-dialog-aside .modal-content .modal-body {
+	overflow-y: auto
+}
+
+.modal-backdrop.in{ height:1504px!important}
+
+.modal.fixed-left .modal-dialog-aside {
+	margin-left: auto;
+	transform: none;
+	!
+	important
+}
+
+.modal.show .modal-dialog-aside {
+	transform: translateX(0);
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
+	{
+	background-color: #9E9E9E !important
+}
+
+.topbar .dropdown-header {
+	text-align: center;
+	font-size: 17px;
+	background-color: #E2E2E2;
+	color: black;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-right: 60px;
+	padding-left: 60px;
+}
+
+
+.lately .visible-lg {
+	width: 320px
+}
+
+.label-primary {
+	background-color: #6775b1!important
+}
+
+.dropdown-manu .glyphicon-star {
+	margin-right: 20px !important;
+	margin-top: 3px !important display: inline-block !important;
+	float: right !important;
+	color: #b9b9b9 !important;
+	text-shadow: 0px 0.5px 0px #524e4e !important;
+}
+
+
+
+.table>thead>tr>th {
+	vertical-align: bottom;
+	border-bottom: 0;
+}
+
+.new {
+	background-color: #f3720c;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size: 10px;
+	margin-left: 5px;
+}
+
+.jpg {
+	color: #188ff5
+}
+
+.gif {
+	color: red
+}
+
+.jpgif {
+	color: #9d0fa7
+}
+
+.good {
+	font-weight: bold;
+	color: #f3720c;
+}
+
+.replyCount {
+	font-weight: bold;
+	color: #f3720c;
+}
+
+.replyCount2 {
+	margin-left: 4px;
+	color: red;
+}
+
+.title {
+	text-align: left !important
+}
+
+td {
+	text-align: center
+}
