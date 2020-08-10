@@ -199,7 +199,7 @@
 						<span style="font-size: 12px; margin-right: 10px; display:inline-block">공개</span>
 					</div>
 				</div>
-			<button onclick = "location.href = 'index.html'" style="float:right; background: #ea880d; border: 1px solid #D3D3D3; color: white; width: 100px; height: 40px; padding-left: 3px; padding-right: 3px; padding-bottom: 3px; margin-bottom: 20px; margin-left:5px; " type="button" class="btn">
+			<button id="writeBtn" onclick = "location.href = 'indexLogin.html'" style="float:right; background: #ea880d; border: 1px solid #D3D3D3; color: white; width: 100px; height: 40px; padding-left: 3px; padding-right: 3px; padding-bottom: 3px; margin-bottom: 20px; margin-left:5px; " type="button" class="btn">
 	    		<span style="position: relative; font-size: 12px; margin-left: 3px;" >등록</span>
 	  		</button>
 			</div>
@@ -482,6 +482,14 @@
 				};
 	     	  }; 
 	    });  
+	 </script>
+	 <script>
+	 
+	 var writeBtn = $('#writeBtn');
+	 
+	 	writeBtn.click(function(){
+	 		alert("글쓰기를 완료했습니다.")
+	 	});	
 	 </script>
   </body>
 </html>
